@@ -1,0 +1,7 @@
+v = (input()).split(',')
+print(v)
+m = []
+for s in v:
+    if (s not in m):
+        m.append(s)
+print(m)
