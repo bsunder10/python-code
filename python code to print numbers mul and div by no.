@@ -1,0 +1,6 @@
+for n in range(2000,7000,5):
+    if(n%7 == 0):
+       print(n)
+
+# Here the obtained numbers are multiples of 5 and divisible by 7
+# ranging from 2000 to 7000
