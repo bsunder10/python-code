@@ -1,0 +1,13 @@
+def asdf(k):
+    c = ''    
+    q = ''
+    for i in range(len(k)):
+        if(k[i].isalpha()):
+            q = q + k[i]
+        if(k[i].isnumeric()):
+            c = c + k[i]
+
+    l = len(q)
+    w = len(c)
+
+    return l,w
