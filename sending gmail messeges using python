@@ -1,0 +1,48 @@
+import smtplib
+
+server = smtplib.SMTP('smtp.gmail.com', 587)
+
+server.starttls()
+
+server.login('sunbder@gmail.com','Sunder@1006')
+
+messege = """\
+Subject: Test
+
+This is sunder"""
+
+server.sendmail('sunbder@gmail.com','bsurender1006@gmail.com', messege)
+
+server.quit()
+
+print('done')
+
+
+
+# To Multiple People
+
+
+import smtplib
+
+server = smtplib.SMTP('smtp.gmail.com', 587)
+
+server.starttls()
+
+server.login('sunbder@gmail.com','Sunder@1006')
+
+messege = """\
+Subject: Test
+
+This is sunder"""
+ 
+recievelist = ['mahi.1tharun@gmail.com', 'bsurender1006@gmail.com']
+
+for i in range(len(recievelist)):
+   server.sendmail('sunbder@gmail.com' , recievelist[i], messege)
+   print('sent mail: ' + str(i))
+
+server.quit()
+
+print('done')
+
+
