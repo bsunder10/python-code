@@ -28,7 +28,7 @@ server = smtplib.SMTP('smtp.gmail.com', 587)
 
 server.starttls()
 
-server.login('sender mail in','Sunder@1006')
+server.login('sender mail in','password')
 
 messege = """\
 Subject: Test
