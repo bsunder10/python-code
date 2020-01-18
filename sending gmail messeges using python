@@ -4,14 +4,14 @@ server = smtplib.SMTP('smtp.gmail.com', 587)
 
 server.starttls()
 
-server.login('sunbder@gmail.com','Sunder@1006')
+server.login('sender mail id','password')
 
 messege = """\
 Subject: Test
 
 This is sunder"""
 
-server.sendmail('sunbder@gmail.com','bsurender1006@gmail.com', messege)
+server.sendmail('sender mail in','receiver mail id', messege)
 
 server.quit()
 
@@ -28,17 +28,17 @@ server = smtplib.SMTP('smtp.gmail.com', 587)
 
 server.starttls()
 
-server.login('sunbder@gmail.com','Sunder@1006')
+server.login('sender mail in','Sunder@1006')
 
 messege = """\
 Subject: Test
 
 This is sunder"""
  
-recievelist = ['mahi.1tharun@gmail.com', 'bsurender1006@gmail.com']
+recievelist = ['receiver mail id1', 'receiver mail id2', .....]
 
 for i in range(len(recievelist)):
-   server.sendmail('sunbder@gmail.com' , recievelist[i], messege)
+   server.sendmail('sender mail in' , recievelist[i], messege)
    print('sent mail: ' + str(i))
 
 server.quit()
