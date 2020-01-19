@@ -1,0 +1,8 @@
+from translate import Translator
+
+k= Translator(to_lang="hindi")
+
+p = k.translate("Good Morning!")
+
+print (p)
+
