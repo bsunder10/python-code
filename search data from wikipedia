@@ -1,0 +1,10 @@
+import wikipediaapi as wi
+
+w = wi.Wikipedia('en')      #en for english language    hi for hindi language
+
+page = w.page('search')
+
+print(page.summary)   # for summary
+print(page.text)      # for full data
+print(page.titile)   # for title
+
