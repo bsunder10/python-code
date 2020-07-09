@@ -1,0 +1,45 @@
+#telegram bot
+
+import time, datetime
+import telepot
+import RPi.GPIO as gp
+from telepot.loop import MessageLoop
+now = datetime.datetime.now()
+gp.setwarnings(False)
+gp.setmode(gp.BCM)
+gp.setup(26,gp.OUT)
+gp.setup(3,gp.OUT)
+def action(msg):
+    chat_id = msg['chat']['id']
+    command = msg['text']
+
+    print ('Received: %s' % command)
+    print(chat_id)
+    if command == 'hi':
+        telegram_bot.sendMessage(chat_id, str('hello'))
+        
+    if command == '/hi':
+        telegram_bot.sendMessage (chat_id, str("HELLO PYTHON"))
+        #gp.output(26,True)
+    elif command == '/time':
+        telegram_bot.sendMessage(chat_id, str(now.hour)+str(":")+str(now.minute))
+        #gp.output(26,False)
+    elif command == '/img':
+        telegram_bot.sendPhoto (chat_id, photo = "https://www.youtube.com/watch?v=uhCVloT1l6E")
+    elif command == '/file':
+        telegram_bot.sendDocument(chat_id, document=open('/home/pi/rgb.py'))
+    elif command == "LIGHT ON":
+        gp.output(26,False)
+    elif command=="LIGHT OFF":
+        gp.output(26,True)
+    elif command == "FAN ON":
+        gp.output(3,False)
+    elif command=="FAN OFF":
+        gp.output(3,True)
+        
+telegram_bot = telepot.Bot(' <your code in telegram> ')
+print ((telegram_bot.getMe()))
+
+MessageLoop(telegram_bot, action).run_as_thread()
+print ('Up and Running....')
+
